@@ -47,12 +47,15 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 studio-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            ABOUT <span className="text-studio-blue">RECOND</span>
+        <div className="text-center mb-20">
+          <div className="inline-block px-4 py-2 bg-studio-blue bg-opacity-10 rounded-full mb-6">
+            <span className="text-studio-blue text-sm font-semibold uppercase tracking-wider">About Us</span>
+          </div>
+          <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            ABOUT <span className="text-studio-blue">REAKSTUDIOS</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            With over 15 years of experience in music production, we've worked with artists across all genres to create unforgettable recordings.
+          <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+            With over 15 years of experience in music production, we've worked with artists across all genres to create unforgettable recordings. Our state-of-the-art facility combines cutting-edge technology with artistic expertise.
           </p>
         </div>
         

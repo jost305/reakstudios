@@ -1,8 +1,8 @@
-# Recording Studio Website
+# ReakStudios Website
 
 ## Overview
 
-This project is a modern, responsive recording studio website built with React and Node.js. It features a professional dark theme design for "RECOND" studio, showcasing services, portfolio, team information, and a contact form. The application uses a full-stack architecture with a React frontend and Express.js backend, designed for deployment on Replit with PostgreSQL database integration.
+This project is a modern, responsive recording studio website built with React and Node.js. It features a professional dark theme design for "ReakStudios" with parallax hero effects, sliding banners, and enhanced UI sections. The application uses a full-stack architecture with a React frontend and Express.js backend, designed for both Replit development and Vercel deployment with PostgreSQL database integration.
 
 ## System Architecture
 
@@ -41,12 +41,13 @@ This project is a modern, responsive recording studio website built with React a
 - `GET /api/contact` - Retrieve contact submissions (admin functionality)
 
 ### Frontend Features
-- **Landing Page**: Hero section with call-to-action buttons
-- **Services Section**: Recording, mixing, mastering, production, podcast, sound design
-- **Portfolio Section**: Featured tracks with audio player simulation
-- **About Section**: Team member profiles and studio statistics
+- **Parallax Hero Section**: Sliding background images with smooth scrolling effects and auto-advancing slides
+- **Enhanced Services Section**: Interactive cards with gradients, hover effects, and background patterns
+- **Portfolio Section**: Featured tracks with audio player simulation and project showcases
+- **About Section**: Team member profiles, studio statistics, and enhanced visual design
 - **Testimonials**: Client testimonials with star ratings
 - **Contact Form**: Service booking form with validation and submission
+- **Navigation**: Smooth scrolling navigation with glass effect and mobile responsiveness
 
 ### Storage System
 - **Development**: In-memory storage implementation for development/testing
@@ -106,10 +107,28 @@ This project is a modern, responsive recording studio website built with React a
 - **Schema Push**: `npm run db:push` for development schema updates
 - **Connection**: Environment-based DATABASE_URL configuration
 
+## Deployment Strategy
+
+### Vercel Deployment
+- **Configuration**: Added vercel.json with optimized build settings
+- **Build Process**: Automated build with npm run build command
+- **API Routes**: Configured for serverless function deployment
+- **Static Assets**: Optimized serving of frontend assets
+- **Environment**: Production environment variables support
+
+### Development Environment
+- **Runtime**: Node.js 20 with Replit modules
+- **Database**: PostgreSQL 16 module (development)
+- **Port Configuration**: Internal port 5000, external port 80
+- **Hot Reload**: Vite development server with HMR
+
 ## Changelog
 
-Changelog:
-- June 23, 2025. Initial setup
+Recent Changes:
+- June 23, 2025: Transformed to ReakStudios with parallax hero, sliding banners, enhanced UI sections
+- June 23, 2025: Added Vercel deployment configuration and README
+- June 23, 2025: Implemented responsive design improvements and better visual effects
+- June 23, 2025: Initial setup
 
 ## User Preferences
 

@@ -33,7 +33,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <div className="font-display text-3xl font-bold text-studio-blue mb-4">RECOND</div>
+            <div className="font-display text-3xl font-bold text-studio-blue mb-4">ReakStudios</div>
             <p className="text-gray-400 mb-6 max-w-md">
               Professional recording studio and music production services in the heart of Nashville. Creating exceptional music since 2009.
             </p>
