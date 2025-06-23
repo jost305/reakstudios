@@ -6,6 +6,8 @@ export const users = pgTable("users", {
   id: serial("id").primaryKey(),
   username: text("username").notNull().unique(),
   password: text("password").notNull(),
+  role: text("role").notNull().default("user"), // "admin" or "user"
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const contactSubmissions = pgTable("contact_submissions", {
@@ -15,12 +17,14 @@ export const contactSubmissions = pgTable("contact_submissions", {
   serviceType: text("service_type").notNull(),
   preferredDate: text("preferred_date"),
   projectDetails: text("project_details"),
+  status: text("status").notNull().default("pending"), // "pending", "in-progress", "completed", "cancelled"
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
+  role: true,
 });
 
 export const insertContactSubmissionSchema = createInsertSchema(contactSubmissions).pick({

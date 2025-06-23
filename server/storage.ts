@@ -8,6 +8,8 @@ export interface IStorage {
   createUser(user: InsertUser): Promise<User>;
   createContactSubmission(submission: InsertContactSubmission): Promise<ContactSubmission>;
   getContactSubmissions(): Promise<ContactSubmission[]>;
+  deleteContactSubmission(id: number): Promise<void>;
+  updateContactSubmissionStatus(id: number, status: string): Promise<ContactSubmission>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -63,6 +65,29 @@ export class DatabaseStorage implements IStorage {
     } catch (error) {
       console.error('Database error in getContactSubmissions:', error);
       return [];
+    }
+  }
+
+  async deleteContactSubmission(id: number): Promise<void> {
+    try {
+      await db.delete(contactSubmissions).where(eq(contactSubmissions.id, id));
+    } catch (error) {
+      console.error('Database error in deleteContactSubmission:', error);
+      throw error;
+    }
+  }
+
+  async updateContactSubmissionStatus(id: number, status: string): Promise<ContactSubmission> {
+    try {
+      const [submission] = await db
+        .update(contactSubmissions)
+        .set({ status })
+        .where(eq(contactSubmissions.id, id))
+        .returning();
+      return submission;
+    } catch (error) {
+      console.error('Database error in updateContactSubmissionStatus:', error);
+      throw error;
     }
   }
 }

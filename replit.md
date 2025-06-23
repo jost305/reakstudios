@@ -32,13 +32,18 @@ This project is a modern, responsive recording studio website built with React a
 ## Key Components
 
 ### Database Schema
-- **Users Table**: Basic user authentication structure (id, username, password)
-- **Contact Submissions Table**: Stores contact form submissions with service details
+- **Users Table**: User authentication with roles (id, username, password, role, createdAt)
+- **Contact Submissions Table**: Stores contact form submissions with status tracking (id, name, email, serviceType, preferredDate, projectDetails, status, createdAt)
 - **Schema Validation**: Zod schemas for type-safe data validation
+- **Migrations**: Database migrations in `./migrations` directory for version control
 
 ### API Endpoints
 - `POST /api/contact` - Submit contact form with validation
-- `GET /api/contact` - Retrieve contact submissions (admin functionality)
+- `POST /api/admin/login` - Admin authentication
+- `POST /api/admin/logout` - Admin logout
+- `GET /api/admin/submissions` - Retrieve contact submissions (admin only)
+- `PATCH /api/admin/submissions/:id/status` - Update submission status (admin only)
+- `DELETE /api/admin/submissions/:id` - Delete submission (admin only)
 
 ### Frontend Features
 - **Parallax Hero Section**: Sliding background images with smooth scrolling effects and auto-advancing slides
@@ -48,6 +53,9 @@ This project is a modern, responsive recording studio website built with React a
 - **Testimonials**: Client testimonials with star ratings
 - **Contact Form**: Service booking form with validation and submission
 - **Navigation**: Smooth scrolling navigation with glass effect and mobile responsiveness
+- **Admin Dashboard**: Comprehensive admin interface for managing contact submissions
+- **Admin Authentication**: Secure login system with session management
+- **Status Management**: Track submission progress (pending, in-progress, completed, cancelled)
 
 ### Storage System
 - **Database**: PostgreSQL with Drizzle ORM for data persistence
@@ -125,6 +133,10 @@ This project is a modern, responsive recording studio website built with React a
 ## Changelog
 
 Recent Changes:
+- June 23, 2025: Created comprehensive admin dashboard with authentication, submission management, and status tracking
+- June 23, 2025: Added database migrations system with role-based user authentication
+- June 23, 2025: Implemented secure admin routes with session management and bcrypt password hashing
+- June 23, 2025: Created deployment configurations for both Vercel and Netlify with environment setup
 - June 23, 2025: Integrated Supabase PostgreSQL database with proper connection handling and error management
 - June 23, 2025: Added PostgreSQL database integration, replaced MemStorage with DatabaseStorage
 - June 23, 2025: Transformed to ReakStudios with parallax hero, sliding banners, enhanced UI sections
