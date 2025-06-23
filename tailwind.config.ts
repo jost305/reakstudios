@@ -5,6 +5,9 @@ export default {
   content: ["./client/index.html", "./client/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Syne', 'sans-serif'],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -61,6 +64,12 @@ export default {
           border: "var(--sidebar-border)",
           ring: "var(--sidebar-ring)",
         },
+        'studio-black': 'var(--studio-black)',
+        'studio-dark': 'var(--studio-dark)',
+        'studio-gray': 'var(--studio-gray)',
+        'studio-light': 'var(--studio-light)',
+        'studio-blue': 'var(--studio-blue)',
+        'studio-gold': 'var(--studio-gold)',
       },
       keyframes: {
         "accordion-down": {
