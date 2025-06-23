@@ -6,26 +6,26 @@ const heroSlides = [
   {
     id: 1,
     image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-    title: "PROFESSIONAL",
-    subtitle: "RECORDING",
-    accent: "STUDIO",
-    description: "State-of-the-art recording facilities and expert music production services for artists, bands, and content creators."
+    title: "FILM AUDIO",
+    subtitle: "POST PRODUCTION",
+    accent: "SPECIALISTS",
+    description: "At Reak Studios, we specialize in enhancing and finalizing audio elements for films, ensuring a captivating auditory experience for audiences."
   },
   {
     id: 2,
     image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-    title: "MIXING &",
-    subtitle: "MASTERING",
+    title: "VOICE OVER &",
+    subtitle: "ADR RECORDING",
     accent: "EXCELLENCE",
-    description: "Transform your recordings into radio-ready tracks with our professional mixing and mastering services."
+    description: "Professional voice over recording, ADR sessions, and animation VO services with full production capabilities."
   },
   {
     id: 3,
     image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080",
-    title: "CREATIVE",
-    subtitle: "PRODUCTION",
-    accent: "SERVICES",
-    description: "From concept to completion, we bring your musical vision to life with cutting-edge production techniques."
+    title: "CUSTOM SOUND",
+    subtitle: "DESIGN &",
+    accent: "SCORING",
+    description: "Music scoring, custom sound design, and longform television mixes tailored to your project's unique needs."
   }
 ];
 
@@ -112,7 +112,7 @@ export default function HeroSection() {
             className="bg-studio-blue hover:bg-blue-400 text-black font-semibold py-4 px-8 rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <Play className="mr-2 h-5 w-5" />
-            Book Studio Time
+            Request Audio Services
           </Button>
           <Button 
             onClick={scrollToPortfolio}
@@ -120,7 +120,7 @@ export default function HeroSection() {
             className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold py-4 px-8 rounded-lg transform hover:scale-105 transition-all duration-300"
           >
             <Headphones className="mr-2 h-5 w-5" />
-            Listen to Our Work
+            Our Portfolio
           </Button>
         </div>
       </div>

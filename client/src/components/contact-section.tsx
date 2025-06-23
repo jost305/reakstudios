@@ -61,22 +61,22 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: "Location",
-      content: "123 Music Row, Nashville, TN 37203"
+      content: "8, Kole Osho way. Abule Oko road,\nMagboro, Ogun state, Nigeria"
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+1 (615) 555-0123"
+      content: "+234 701 924 6326"
     },
     {
       icon: Mail,
       title: "Email",
-      content: "info@recondstudio.com"
+      content: "reakstudios@hotmail.com"
     },
     {
       icon: Clock,
       title: "Studio Hours",
-      content: "Mon-Fri: 9AM-10PM\nSat-Sun: 10AM-8PM"
+      content: "Monday - Saturday\n8:00 AM - 6:00 PM"
     }
   ];
 
@@ -88,14 +88,14 @@ export default function ContactSection() {
             GET IN <span className="text-studio-blue">TOUCH</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Ready to start your next project? Contact us to discuss your recording needs and book studio time.
+            Ready to enhance your film's audio? Contact us to discuss your audio post-production needs and book our specialized services.
           </p>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="studio-gray p-8 rounded-xl">
-            <h3 className="font-display text-2xl font-bold mb-6">Book Studio Time</h3>
+            <h3 className="font-display text-2xl font-bold mb-6">Request Audio Services</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium mb-2">Full Name</label>
@@ -128,11 +128,17 @@ export default function ContactSection() {
                     <SelectValue placeholder="Select a service" />
                   </SelectTrigger>
                   <SelectContent className="bg-gray-700 border-gray-600">
-                    <SelectItem value="recording">Recording</SelectItem>
-                    <SelectItem value="mixing">Mixing</SelectItem>
-                    <SelectItem value="mastering">Mastering</SelectItem>
-                    <SelectItem value="production">Production</SelectItem>
-                    <SelectItem value="podcast">Podcast Production</SelectItem>
+                    <SelectItem value="stereo-mix">Stereo Mix to Picture</SelectItem>
+                    <SelectItem value="surround-mix">Surround Mix to Picture</SelectItem>
+                    <SelectItem value="adr">ADR Recording & Editing</SelectItem>
+                    <SelectItem value="voice-over">Voice Over Recording/Editing</SelectItem>
+                    <SelectItem value="animation-vo">Animation VO</SelectItem>
+                    <SelectItem value="voice-demo">Voice Over Demo (Full Production)</SelectItem>
+                    <SelectItem value="music-scoring">Music Scoring</SelectItem>
+                    <SelectItem value="sound-design">Custom Sound Design</SelectItem>
+                    <SelectItem value="tv-mix">Longform Television Mixes</SelectItem>
+                    <SelectItem value="audiobook">Audiobook Recording</SelectItem>
+                    <SelectItem value="voice-casting">Full Service Voice Casting</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

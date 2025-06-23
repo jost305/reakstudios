@@ -9,10 +9,11 @@ export default function Footer() {
   ];
 
   const services = [
-    "Recording",
-    "Mixing", 
-    "Mastering",
-    "Production",
+    "Stereo Mix to Picture",
+    "Surround Mix to Picture", 
+    "ADR Recording",
+    "Voice Over Recording",
+    "Music Scoring",
     "Sound Design"
   ];
 
@@ -33,9 +34,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <div className="font-display text-3xl font-bold text-studio-blue mb-4">ReakStudios</div>
+            <div className="font-display text-3xl font-bold text-studio-blue mb-4">Reak Studios</div>
             <p className="text-gray-400 mb-6 max-w-md">
-              Professional recording studio and music production services in the heart of Nashville. Creating exceptional music since 2009.
+              Professional audio post-production services specializing in film and television. Located in Magboro, Ogun State, Nigeria.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
@@ -85,7 +86,7 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
           <p>
-            &copy; 2024 Recond Studio. All rights reserved. | 
+            &copy; 2025 Reak Studios. All rights reserved. | 
             <a href="#" className="hover:text-studio-blue transition-colors ml-1">Privacy Policy</a> | 
             <a href="#" className="hover:text-studio-blue transition-colors ml-1">Terms of Service</a>
           </p>

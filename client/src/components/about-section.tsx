@@ -52,10 +52,10 @@ export default function AboutSection() {
             <span className="text-studio-blue text-sm font-semibold uppercase tracking-wider">About Us</span>
           </div>
           <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            ABOUT <span className="text-studio-blue">REAKSTUDIOS</span>
+            ABOUT <span className="text-studio-blue">REAK STUDIOS</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            With over 15 years of experience in music production, we've worked with artists across all genres to create unforgettable recordings. Our state-of-the-art facility combines cutting-edge technology with artistic expertise.
+            At Reak Studios, we specialize in enhancing and finalizing audio elements for films, ensuring a captivating auditory experience for audiences. Located in Magboro, Ogun State, Nigeria, we provide comprehensive audio post-production services.
           </p>
         </div>
         

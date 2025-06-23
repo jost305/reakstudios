@@ -2,40 +2,40 @@ import { Mic, Sliders, Disc, Music, Podcast, Film } from "lucide-react";
 
 const services = [
   {
-    icon: Mic,
-    title: "Recording",
-    description: "Professional multi-track recording with state-of-the-art equipment and acoustically treated rooms.",
-    price: "Starting at $150/hour"
+    icon: Film,
+    title: "Stereo Mix to Picture",
+    description: "Professional stereo mixing synchronized to picture for film and television productions.",
+    price: "Custom Quote"
   },
   {
     icon: Sliders,
-    title: "Mixing",
-    description: "Expert mixing services to balance and enhance your recordings with professional grade plugins.",
-    price: "Starting at $200/song"
+    title: "Surround Mix to Picture",
+    description: "Immersive surround sound mixing for cinema and broadcast television projects.",
+    price: "Custom Quote"
   },
   {
-    icon: Disc,
-    title: "Mastering",
-    description: "Final polish and optimization for streaming platforms, vinyl, and digital distribution.",
-    price: "Starting at $100/song"
-  },
-  {
-    icon: Music,
-    title: "Production",
-    description: "Full music production services including arrangement, instrumentation, and creative direction.",
-    price: "Starting at $500/song"
+    icon: Mic,
+    title: "ADR Recording & Editing",
+    description: "Automated Dialogue Replacement recording and editing services for film and television.",
+    price: "Custom Quote"
   },
   {
     icon: Podcast,
-    title: "Podcast Production",
-    description: "Complete podcast production including recording, editing, and post-production services.",
-    price: "Starting at $75/hour"
+    title: "Voice Over Recording/Editing",
+    description: "Professional voice over recording and editing for commercials, documentaries, and media.",
+    price: "Custom Quote"
   },
   {
-    icon: Film,
-    title: "Sound Design",
-    description: "Custom sound design and audio post-production for film, games, and multimedia projects.",
-    price: "Custom Pricing"
+    icon: Music,
+    title: "Animation VO",
+    description: "Specialized voice over recording for animated films, series, and digital content.",
+    price: "Custom Quote"
+  },
+  {
+    icon: Disc,
+    title: "Music Scoring",
+    description: "Custom music composition and scoring for films, television, and multimedia projects.",
+    price: "Custom Quote"
   }
 ];
 
@@ -55,10 +55,10 @@ export default function ServicesSection() {
             <span className="text-studio-blue text-sm font-semibold uppercase tracking-wider">Our Expertise</span>
           </div>
           <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            PROFESSIONAL <span className="text-studio-blue">SERVICES</span>
+            AUDIO POST <span className="text-studio-blue">PRODUCTION</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            From recording to mastering, we provide comprehensive music production services to bring your vision to life with industry-leading quality.
+            Comprehensive audio post-production services for film, television, animation, and media projects with industry-leading quality.
           </p>
         </div>
         
