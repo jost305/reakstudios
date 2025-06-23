@@ -19,7 +19,7 @@ This project is a modern, responsive recording studio website built with React a
 - **Runtime**: Node.js with TypeScript
 - **Framework**: Express.js for REST API
 - **Database ORM**: Drizzle ORM with PostgreSQL
-- **Database Provider**: Neon Database (serverless PostgreSQL)
+- **Database Provider**: Supabase PostgreSQL (serverless PostgreSQL)
 - **Session Management**: Prepared for connect-pg-simple sessions
 - **Development**: tsx for TypeScript execution in development
 
@@ -125,6 +125,7 @@ This project is a modern, responsive recording studio website built with React a
 ## Changelog
 
 Recent Changes:
+- June 23, 2025: Integrated Supabase PostgreSQL database with proper connection handling and error management
 - June 23, 2025: Added PostgreSQL database integration, replaced MemStorage with DatabaseStorage
 - June 23, 2025: Transformed to ReakStudios with parallax hero, sliding banners, enhanced UI sections
 - June 23, 2025: Added Vercel deployment configuration and README

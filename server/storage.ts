@@ -12,33 +12,58 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    const [user] = await db.select().from(users).where(eq(users.id, id));
-    return user || undefined;
+    try {
+      const [user] = await db.select().from(users).where(eq(users.id, id));
+      return user || undefined;
+    } catch (error) {
+      console.error('Database error in getUser:', error);
+      return undefined;
+    }
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    const [user] = await db.select().from(users).where(eq(users.username, username));
-    return user || undefined;
+    try {
+      const [user] = await db.select().from(users).where(eq(users.username, username));
+      return user || undefined;
+    } catch (error) {
+      console.error('Database error in getUserByUsername:', error);
+      return undefined;
+    }
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const [user] = await db
-      .insert(users)
-      .values(insertUser)
-      .returning();
-    return user;
+    try {
+      const [user] = await db
+        .insert(users)
+        .values(insertUser)
+        .returning();
+      return user;
+    } catch (error) {
+      console.error('Database error in createUser:', error);
+      throw error;
+    }
   }
 
   async createContactSubmission(insertSubmission: InsertContactSubmission): Promise<ContactSubmission> {
-    const [submission] = await db
-      .insert(contactSubmissions)
-      .values(insertSubmission)
-      .returning();
-    return submission;
+    try {
+      const [submission] = await db
+        .insert(contactSubmissions)
+        .values(insertSubmission)
+        .returning();
+      return submission;
+    } catch (error) {
+      console.error('Database error in createContactSubmission:', error);
+      throw error;
+    }
   }
 
   async getContactSubmissions(): Promise<ContactSubmission[]> {
-    return await db.select().from(contactSubmissions);
+    try {
+      return await db.select().from(contactSubmissions);
+    } catch (error) {
+      console.error('Database error in getContactSubmissions:', error);
+      return [];
+    }
   }
 }
 
