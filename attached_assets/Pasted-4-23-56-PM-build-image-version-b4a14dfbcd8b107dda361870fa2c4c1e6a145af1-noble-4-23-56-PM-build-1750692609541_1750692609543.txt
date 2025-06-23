@@ -1,0 +1,37 @@
+4:23:56 PM: build-image version: b4a14dfbcd8b107dda361870fa2c4c1e6a145af1 (noble)
+4:23:56 PM: buildbot version: b4a14dfbcd8b107dda361870fa2c4c1e6a145af1
+4:23:56 PM: Fetching cached dependencies
+4:23:56 PM: Failed to fetch cache, continuing with build
+4:23:56 PM: Starting to prepare the repo for build
+4:23:56 PM: No cached dependencies found. Cloning fresh repo
+4:23:56 PM: git clone --filter=blob:none https://github.com/jost305/reakstudios
+4:23:56 PM: Preparing Git Reference refs/heads/main
+4:23:58 PM: Starting to install dependencies
+4:23:58 PM: Ruby version set to 3.4.3
+4:23:58 PM: Go version set to 1.24.4
+4:23:58 PM: Using PHP version
+4:23:59 PM: Downloading and installing node v20.19.3...
+4:23:59 PM: Downloading https://nodejs.org/dist/v20.19.3/node-v20.19.3-linux-x64.tar.xz...
+4:24:00 PM: Computing checksum with sha256sum
+4:24:00 PM: Checksums matched!
+4:24:01 PM: Now using node v20.19.3 (npm v10.8.2)
+4:24:01 PM: Enabling Node.js Corepack
+4:24:02 PM: Failed during stage 'Install dependencies': dependency_installation script returned non-zero exit code: 1
+4:24:02 PM: Started restoring cached build plugins
+4:24:02 PM: Finished restoring cached build plugins
+4:24:02 PM: Started restoring cached corepack dependencies
+4:24:02 PM: Finished restoring cached corepack dependencies
+4:24:02 PM: No npm workspaces detected
+4:24:02 PM: Started restoring cached node modules
+4:24:02 PM: Finished restoring cached node modules
+4:24:02 PM: Installing npm packages using npm version 10.8.2
+4:24:02 PM: npm error code ENOENT
+4:24:02 PM: npm error syscall open
+4:24:02 PM: npm error path /opt/buildhome/repo/package.json
+4:24:02 PM: npm error errno -2
+4:24:02 PM: npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/opt/buildhome/repo/package.json'
+4:24:02 PM: npm error enoent This is related to npm not being able to find a file.
+4:24:02 PM: npm error enoent
+4:24:02 PM: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2025-06-23T15_24_02_192Z-debug-0.log
+4:24:02 PM: Error during npm install
+4:24:02 PM: Failing build: Failed to install dependencies
