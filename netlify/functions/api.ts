@@ -1,3 +1,4 @@
+
 import { Handler } from '@netlify/functions';
 import express from 'express';
 import { registerRoutes } from '../../server/routes.js';
@@ -5,8 +6,14 @@ import { registerRoutes } from '../../server/routes.js';
 // Create Express app
 const app = express();
 
-// Register all routes
-await registerRoutes(app);
+// Refactor register routes to handle asynchronously
+async function initApp() {
+  await registerRoutes(app);
+}
+
+initApp().catch(err => {
+  console.error('Error initializing app:', err);
+});
 
 // Netlify function handler
 export const handler: Handler = async (event, context) => {
