@@ -35,43 +35,54 @@ const additionalServices = [
 
 export default function AdditionalServicesSection() {
   return (
-    <section className="py-16 studio-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-studio-blue bg-opacity-10 rounded-full mb-6">
-            <span className="text-studio-blue text-sm font-semibold uppercase tracking-wider">Additional Services</span>
+    <section className="py-24 bg-gradient-to-b from-black via-gray-950 to-gray-900 relative">
+      {/* Modern floating elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-studio-blue/10 to-cyan-400/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-purple-500/5 to-studio-blue/10 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        {/* Minimalist header */}
+        <div className="text-center mb-20">
+          <div className="inline-block mb-6">
+            <span className="text-studio-blue text-sm font-medium tracking-[0.2em] uppercase">Extended Capabilities</span>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-white">
-            MORE <span className="text-studio-blue">SPECIALIZED</span> SERVICES
+          <h2 className="text-4xl md:text-6xl font-light mb-6">
+            <span className="text-white">Specialized</span>
+            <br />
+            <span className="bg-gradient-to-r from-studio-blue to-cyan-300 bg-clip-text text-transparent font-normal">Audio Services</span>
           </h2>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Modern card layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {additionalServices.map((service, index) => {
             const Icon = service.icon;
             return (
               <div 
                 key={index}
-                className="group relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 rounded-xl border border-gray-700 hover:border-studio-blue transition-all duration-500 transform hover:scale-105"
+                className="group relative p-6 bg-gradient-to-b from-white/[0.03] to-white/[0.01] backdrop-blur-sm border border-white/10 rounded-2xl hover:border-studio-blue/30 transition-all duration-500 hover:-translate-y-2"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-studio-blue/5 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Hover glow */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-studio-blue/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="text-studio-blue text-3xl group-hover:scale-110 transition-transform duration-300">
-                      <Icon size={36} />
-                    </div>
-                    <div className="text-right">
-                      <div className="text-studio-gold font-bold text-sm">{service.price}</div>
-                    </div>
+                <div className="relative">
+                  {/* Minimal icon */}
+                  <div className="w-12 h-12 bg-studio-blue/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-studio-blue/20 transition-all duration-300">
+                    <Icon size={24} className="text-studio-blue" />
                   </div>
                   
-                  <h3 className="font-display text-lg font-bold mb-3 text-white group-hover:text-studio-blue transition-colors duration-300">
+                  {/* Clean typography */}
+                  <h3 className="text-lg font-semibold text-white mb-3 group-hover:text-studio-blue transition-colors duration-300">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
                     {service.description}
                   </p>
+                  
+                  {/* Subtle price */}
+                  <div className="text-xs text-studio-blue/70 font-medium">{service.price}</div>
                 </div>
               </div>
             );

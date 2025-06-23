@@ -45,60 +45,83 @@ const teamMembers = [
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 studio-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <div className="inline-block px-4 py-2 bg-studio-blue bg-opacity-10 rounded-full mb-6">
-            <span className="text-studio-blue text-sm font-semibold uppercase tracking-wider">About Us</span>
+    <section id="about" className="py-32 bg-gradient-to-b from-gray-900 via-black to-gray-950 relative overflow-hidden">
+      {/* Modern background effects */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-72 h-72 bg-gradient-to-r from-studio-blue/10 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-l from-cyan-400/5 to-transparent rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        {/* Contemporary header */}
+        <div className="text-center mb-24">
+          <div className="inline-flex items-center gap-3 mb-8">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-studio-blue"></div>
+            <span className="text-studio-blue text-sm font-medium tracking-[0.3em] uppercase">About Us</span>
+            <div className="w-8 h-px bg-gradient-to-l from-transparent to-studio-blue"></div>
           </div>
-          <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-            ABOUT <span className="text-studio-blue">REAK STUDIOS</span>
+          <h2 className="text-5xl md:text-7xl font-light mb-8 leading-tight">
+            <span className="text-white">Reak</span>
+            <br />
+            <span className="bg-gradient-to-r from-studio-blue via-cyan-400 to-blue-300 bg-clip-text text-transparent">Studios</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
-            At Reak Studios, we specialize in enhancing and finalizing audio elements for films, ensuring a captivating auditory experience for audiences. Located in Magboro, Ogun State, Nigeria, we provide comprehensive audio post-production services.
-          </p>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl text-gray-300 leading-relaxed mb-8">
+              At Reak Studios, we specialize in enhancing and finalizing audio elements for films, ensuring a captivating auditory experience for audiences.
+            </p>
+            <p className="text-lg text-gray-400 leading-relaxed">
+              Located in Magboro, Ogun State, Nigeria, we provide comprehensive audio post-production services that bring stories to life.
+            </p>
+          </div>
         </div>
         
-        {/* Studio Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        {/* Modern stats grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="font-display text-4xl md:text-5xl font-bold text-studio-blue mb-2">
-                {stat.value}
+            <div key={index} className="text-center group">
+              <div className="relative mb-4">
+                <div className="text-6xl md:text-7xl font-light text-white mb-2 group-hover:scale-105 transition-transform duration-300">
+                  {stat.value}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-studio-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
               </div>
-              <div className="text-gray-400">{stat.label}</div>
+              <div className="text-gray-400 text-sm font-medium tracking-wide uppercase">{stat.label}</div>
             </div>
           ))}
         </div>
         
-        {/* Team Members */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Clean team section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {teamMembers.map((member) => (
-            <div key={member.id} className="text-center group">
-              <div className="relative mb-6">
-                <img 
-                  src={member.image}
-                  alt="Team member" 
-                  className="w-48 h-48 rounded-full mx-auto object-cover border-4 border-gray-700 group-hover:border-studio-blue transition-colors duration-300"
-                />
-                <div className="absolute inset-0 w-48 h-48 rounded-full mx-auto bg-studio-blue opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+            <div key={member.id} className="group">
+              <div className="relative mb-8">
+                <div className="w-48 h-48 mx-auto relative overflow-hidden rounded-2xl">
+                  <img 
+                    src={member.image}
+                    alt="Team member" 
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
               </div>
-              <h3 className="font-display text-xl font-bold mb-2">{member.name}</h3>
-              <p className="text-studio-blue font-semibold mb-3">{member.role}</p>
-              <p className="text-gray-400 text-sm max-w-xs mx-auto mb-4">{member.bio}</p>
-              <div className="flex justify-center space-x-4">
-                {member.social.map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <a 
-                      key={index}
-                      href={social.url} 
-                      className="text-gray-400 hover:text-studio-blue transition-colors"
-                    >
-                      <Icon size={20} />
-                    </a>
-                  );
-                })}
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold text-white mb-2">{member.name}</h3>
+                <p className="text-studio-blue font-medium mb-4">{member.role}</p>
+                <p className="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto mb-6">{member.bio}</p>
+                <div className="flex justify-center space-x-4">
+                  {member.social.map((social, index) => {
+                    const Icon = social.icon;
+                    return (
+                      <a 
+                        key={index}
+                        href={social.url} 
+                        className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-gray-400 hover:text-studio-blue hover:bg-studio-blue/10 transition-all duration-300"
+                      >
+                        <Icon size={18} />
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           ))}

@@ -48,52 +48,79 @@ const recentProjects = [
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-20 studio-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            OUR <span className="text-studio-blue">PORTFOLIO</span>
+    <section id="portfolio" className="py-32 bg-gradient-to-b from-gray-950 to-black relative overflow-hidden">
+      {/* Ultra-modern background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-1/3 w-[600px] h-[600px] bg-gradient-to-br from-studio-blue/8 via-cyan-400/5 to-transparent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] bg-gradient-to-tr from-purple-500/5 via-studio-blue/8 to-transparent rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-8xl mx-auto px-6 lg:px-12 relative z-10">
+        {/* Modern header design */}
+        <div className="text-center mb-24">
+          <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-studio-blue/20 to-cyan-400/10 rounded-full mb-8">
+            <div className="w-8 h-8 bg-studio-blue rounded-lg"></div>
+          </div>
+          <h2 className="text-5xl md:text-7xl font-extralight mb-8 tracking-tight">
+            <span className="text-white">Our</span>
+            <br />
+            <span className="bg-gradient-to-r from-studio-blue via-cyan-300 to-blue-200 bg-clip-text text-transparent">Portfolio</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Listen to some of our recent work and discover the quality that sets us apart.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Experience the quality and creativity that defines our audio post-production work across film, television, and media.
           </p>
         </div>
         
-        {/* Featured Tracks */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        {/* Featured audio players with modern design */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
           {featuredTracks.map((track) => (
-            <AudioPlayer key={track.id} track={track} />
+            <div key={track.id} className="group">
+              <div className="p-8 bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm border border-white/10 rounded-3xl hover:border-studio-blue/30 transition-all duration-500">
+                <AudioPlayer track={track} />
+              </div>
+            </div>
           ))}
         </div>
         
-        {/* Recent Projects */}
+        {/* Modern project showcase */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {recentProjects.map((project) => (
             <div key={project.id} className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-xl mb-4">
+              <div className="relative overflow-hidden rounded-3xl mb-6 aspect-[4/3]">
                 <img 
                   src={project.image}
                   alt="Project thumbnail" 
-                  className="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <button className="bg-studio-blue text-black p-4 rounded-full transform scale-75 group-hover:scale-100 transition-transform duration-300">
-                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                {/* Modern overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                {/* Play button */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="w-16 h-16 bg-studio-blue/90 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-black ml-1" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                     </svg>
-                  </button>
+                  </div>
                 </div>
-                <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-sm font-semibold ${
-                  project.genre === 'Jazz' ? 'bg-studio-blue text-black' :
-                  project.genre === 'Electronic' ? 'bg-studio-gold text-black' :
-                  'bg-green-500 text-black'
-                }`}>
-                  {project.genre}
+                
+                {/* Genre tag */}
+                <div className="absolute top-4 right-4">
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm ${
+                    project.genre === 'Jazz' ? 'bg-studio-blue/20 text-studio-blue border border-studio-blue/30' :
+                    project.genre === 'Electronic' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-400/30' :
+                    'bg-green-500/20 text-green-400 border border-green-400/30'
+                  }`}>
+                    {project.genre}
+                  </span>
                 </div>
               </div>
-              <h3 className="font-semibold text-lg mb-2">{project.title}</h3>
-              <p className="text-gray-400 text-sm mb-2">{project.artist}</p>
-              <p className="text-gray-500 text-sm">{project.description}</p>
+              
+              <div className="space-y-3">
+                <h3 className="text-xl font-semibold text-white group-hover:text-studio-blue transition-colors duration-300">{project.title}</h3>
+                <p className="text-studio-blue text-sm font-medium">{project.artist}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">{project.description}</p>
+              </div>
             </div>
           ))}
         </div>
